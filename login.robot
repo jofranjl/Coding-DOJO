@@ -1,43 +1,35 @@
 *** Settings ***
 
+Library          SeleniumLibrary
 
-Resource        ./login.resource
+Resource         ./login.resource
 
-Test Setup      login.Abrir navegador
-Test Teardown   login.Fechar navegador
+Test Setup       Abrir navegador
+Test Teardown    Fechar navegador
 
 *** Test Cases ***
 FARM-LXI-1234   # Teste validação de login
+    [Documentation]     Teste validação de login com credencias inválidas
     [Tags]      Alto    Login
-    Aguardar página carregar corretamente
-    Informar usuário    Admin
-    Informar senha      admin123
+    Informar usuário    X
+    Informar senha      X
     Clicar no botão logar
+    Validar mensagem de erro    Invalid credentials
 
-FARM-LXI-1234   # Teste validação de login incorreto
+
+FARM-LXI-1235    # Teste validação login válido
+    [Documentation]      Teste validação de login com credenciais válidas
     [Tags]      Alto    Login
-    Aguardar página carregar corretamente
     Informar usuário    Admin
-    Informar senha      admin12
+    Informar senha    admin123
     Clicar no botão logar
-    Sleep    5
-    Login invalido    
+    Validar usuário    FirstNameTest LastNameTest
 
-
-FARM-LXI-12345-Pagina de busca
-    Aguardar página carregar corretamente
+FARM-LXI-1236    # Teste validação alteração de senha
+    [Documentation]      Teste validação de alteração de senha
+    [Tags]      Alto   senha
     Informar usuário    Admin
-    Informar senha      admin123
+    Informar senha    admin123
     Clicar no botão logar
-    Aguardar até a busca estar visivel
-
-
-FARM-LXI-12345-Mudar senha
-    Aguardar página carregar corretamente
-    Informar usuário    Admin
-    Informar senha      admin123
-    Clicar no botão logar
-    Aguardar até a busca estar visivel
-    CLicar no avatar
-
-
+    Ir para alteração de senha
+    
