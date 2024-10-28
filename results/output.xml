@@ -1,97 +1,246 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1.1 (Python 3.13.0 on win32)" generated="2024-10-28T15:23:20.436423" rpa="false" schemaversion="5">
+<robot generator="Robot 7.1.1 (Python 3.13.0 on win32)" generated="2024-10-28T16:08:28.709124" rpa="false" schemaversion="5">
 <suite id="s1" name="Coding DOJO" source="C:\Users\jofran.lima\OneDrive - Linx SA\Documentos\GIT\Coding DOJO">
 <suite id="s1-s1" name="Login" source="C:\Users\jofran.lima\OneDrive - Linx SA\Documentos\GIT\Coding DOJO\login.robot">
-<test id="s1-s1-t1" name="FARM-LXI-1234" line="10">
+<test id="s1-s1-t1" name="FARM-LXI-12345-Mudar senha" line="35">
 <kw name="Abrir navegador" owner="login" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-10-28T15:23:20.625273" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/'.</msg>
+<msg time="2024-10-28T16:08:28.917996" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/'.</msg>
 <arg>${url}</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-10-28T15:23:20.624830" elapsed="4.251146"/>
+<status status="PASS" start="2024-10-28T16:08:28.917641" elapsed="4.087143"/>
 </kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-10-28T15:23:29.878852" level="INFO">Slept 5 seconds.</msg>
-<arg>5</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-10-28T15:23:24.876570" elapsed="5.003194"/>
+<kw name="Tempo de espera" owner="login">
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>10</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2024-10-28T16:08:33.005920" elapsed="0.001275"/>
 </kw>
-<status status="PASS" start="2024-10-28T15:23:20.623391" elapsed="9.256986"/>
+<status status="PASS" start="2024-10-28T16:08:33.005215" elapsed="0.002179"/>
+</kw>
+<status status="PASS" start="2024-10-28T16:08:28.916592" elapsed="4.090901"/>
 </kw>
 <kw name="Aguardar página carregar corretamente" owner="login">
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2024-10-28T15:23:29.919191" level="INFO">Element 'css=h5' is displayed.</msg>
+<msg time="2024-10-28T16:08:33.313901" level="INFO">Element 'css=h5' is displayed.</msg>
 <arg>css=h5</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2024-10-28T15:23:29.882640" elapsed="0.037057"/>
+<status status="PASS" start="2024-10-28T16:08:33.008401" elapsed="0.306233"/>
 </kw>
 <kw name="Element Should Contain" owner="SeleniumLibrary">
-<msg time="2024-10-28T15:23:29.955446" level="INFO">Element 'css=h5' contains text 'Login'.</msg>
+<msg time="2024-10-28T16:08:33.334960" level="INFO">Element 'css=h5' contains text 'Login'.</msg>
 <arg>css=h5</arg>
 <arg>Login</arg>
 <doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<status status="PASS" start="2024-10-28T15:23:29.920101" elapsed="0.035843"/>
+<status status="PASS" start="2024-10-28T16:08:33.314876" elapsed="0.020317"/>
 </kw>
-<status status="PASS" start="2024-10-28T15:23:29.881453" elapsed="0.074814"/>
+<status status="PASS" start="2024-10-28T16:08:33.007921" elapsed="0.327493"/>
 </kw>
 <kw name="Informar usuário" owner="login">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-10-28T15:23:29.959493" level="INFO">Typing text 'X' into text field 'name=username'.</msg>
+<msg time="2024-10-28T16:08:33.337343" level="INFO">Typing text 'Admin' into text field 'name=username'.</msg>
 <arg>name=username</arg>
 <arg>${login}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-28T15:23:29.958628" elapsed="0.143221"/>
+<status status="PASS" start="2024-10-28T16:08:33.336894" elapsed="0.074959"/>
 </kw>
-<arg>X</arg>
-<status status="PASS" start="2024-10-28T15:23:29.957246" elapsed="0.145094"/>
+<arg>Admin</arg>
+<status status="PASS" start="2024-10-28T16:08:33.336163" elapsed="0.075877"/>
 </kw>
 <kw name="Informar senha" owner="login">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-10-28T15:23:30.104808" level="INFO">Typing text 'X' into text field 'name=password'.</msg>
+<msg time="2024-10-28T16:08:33.413518" level="INFO">Typing text 'admin123' into text field 'name=password'.</msg>
 <arg>name=password</arg>
 <arg>${senha}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-28T15:23:30.103963" elapsed="0.132453"/>
+<status status="PASS" start="2024-10-28T16:08:33.413087" elapsed="0.087620"/>
 </kw>
-<arg>X</arg>
-<status status="PASS" start="2024-10-28T15:23:30.102989" elapsed="0.133717"/>
+<arg>admin123</arg>
+<status status="PASS" start="2024-10-28T16:08:33.412427" elapsed="0.088585"/>
 </kw>
 <kw name="Clicar no botão logar" owner="login">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-10-28T15:23:30.239205" level="INFO">Clicking button 'css=div.orangehrm-login-layout div.orangehrm-login-layout-blob div.orangehrm-login-container div.orangehrm-login-slot-wrapper div.orangehrm-login-slot div.orangehrm-login-form form.oxd-form div.oxd-form-actions.orangehrm-login-action:nth-child(4) &gt; button.oxd-button.oxd-button--medium.oxd-button--main.orangehrm-login-button'.</msg>
-<arg>css=div.orangehrm-login-layout div.orangehrm-login-layout-blob div.orangehrm-login-container div.orangehrm-login-slot-wrapper div.orangehrm-login-slot div.orangehrm-login-form form.oxd-form div.oxd-form-actions.orangehrm-login-action:nth-child(4) &gt; button.oxd-button.oxd-button--medium.oxd-button--main.orangehrm-login-button</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-28T15:23:30.238592" elapsed="0.639541"/>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-28T16:08:33.502549" level="INFO">Clicking element 'css=button[type="submit"]'.</msg>
+<arg>css=button[type="submit"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-28T16:08:33.502122" elapsed="0.882311"/>
 </kw>
-<status status="PASS" start="2024-10-28T15:23:30.237476" elapsed="0.641001"/>
+<status status="PASS" start="2024-10-28T16:08:33.501484" elapsed="0.883118"/>
+</kw>
+<kw name="Aguardar até a busca estar visivel" owner="login">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=input[placeholder="Search"]</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-28T16:08:34.385478" elapsed="0.267083"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-28T16:08:34.653139" level="INFO">Typing text 'Seu texto aqui' into text field 'css=input[placeholder="Search"]'.</msg>
+<arg>css=input[placeholder="Search"]</arg>
+<arg>Seu texto aqui</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-28T16:08:34.652776" elapsed="0.063402"/>
+</kw>
+<status status="PASS" start="2024-10-28T16:08:34.384928" elapsed="0.331492"/>
+</kw>
+<kw name="CLicar no avatar" owner="login">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-28T16:08:34.717778" level="INFO">Clicking element 'css=.oxd-userdropdown-tab'.</msg>
+<arg>css=.oxd-userdropdown-tab</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-28T16:08:34.717442" elapsed="0.065573"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-10-28T16:08:39.784577" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-10-28T16:08:34.783315" elapsed="5.001601"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-28T16:08:39.785686" level="INFO">Clicking element 'css=button.oxd-button--secondary:contains('Save')'.</msg>
+<msg time="2024-10-28T16:08:39.868716" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-12.png"&gt;&lt;img src="selenium-screenshot-12.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-10-28T16:08:39.869282" level="FAIL">InvalidSelectorException: Message: invalid selector
+from javascript error: {"status":32,"value":"An invalid or illegal selector was specified"}
+  (Session info: chrome=130.0.6723.70); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF735A83AB5+28005]
+	(No symbol) [0x00007FF7359E83B0]
+	(No symbol) [0x00007FF73588580A]
+	(No symbol) [0x00007FF73588C2CC]
+	(No symbol) [0x00007FF73588E5E7]
+	(No symbol) [0x00007FF73588E6A0]
+	(No symbol) [0x00007FF7358D54EA]
+	(No symbol) [0x00007FF7358D5D2C]
+	(No symbol) [0x00007FF73591EAC7]
+	(No symbol) [0x00007FF7358FBA7F]
+	(No symbol) [0x00007FF73591B8B3]
+	(No symbol) [0x00007FF7358FB7E3]
+	(No symbol) [0x00007FF7358C75C8]
+	(No symbol) [0x00007FF7358C8731]
+	GetHandleVerifier [0x00007FF735D7643D+3118829]
+	GetHandleVerifier [0x00007FF735DC6C90+3448640]
+	GetHandleVerifier [0x00007FF735DBCF0D+3408317]
+	GetHandleVerifier [0x00007FF735B4A40B+841403]
+	(No symbol) [0x00007FF7359F340F]
+	(No symbol) [0x00007FF7359EF484]
+	(No symbol) [0x00007FF7359EF61D]
+	(No symbol) [0x00007FF7359DEB79]
+	BaseThreadInitThunk [0x00007FFA45B77374+20]
+	RtlUserThreadStart [0x00007FFA46BBCC91+33]
+</msg>
+<arg>css=button.oxd-button--secondary:contains('Save')</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2024-10-28T16:08:39.785122" elapsed="0.088889">InvalidSelectorException: Message: invalid selector
+from javascript error: {"status":32,"value":"An invalid or illegal selector was specified"}
+  (Session info: chrome=130.0.6723.70); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF735A83AB5+28005]
+	(No symbol) [0x00007FF7359E83B0]
+	(No symbol) [0x00007FF73588580A]
+	(No symbol) [0x00007FF73588C2CC]
+	(No symbol) [0x00007FF73588E5E7]
+	(No symbol) [0x00007FF73588E6A0]
+	(No symbol) [0x00007FF7358D54EA]
+	(No symbol) [0x00007FF7358D5D2C]
+	(No symbol) [0x00007FF73591EAC7]
+	(No symbol) [0x00007FF7358FBA7F]
+	(No symbol) [0x00007FF73591B8B3]
+	(No symbol) [0x00007FF7358FB7E3]
+	(No symbol) [0x00007FF7358C75C8]
+	(No symbol) [0x00007FF7358C8731]
+	GetHandleVerifier [0x00007FF735D7643D+3118829]
+	GetHandleVerifier [0x00007FF735DC6C90+3448640]
+	GetHandleVerifier [0x00007FF735DBCF0D+3408317]
+	GetHandleVerifier [0x00007FF735B4A40B+841403]
+	(No symbol) [0x00007FF7359F340F]
+	(No symbol) [0x00007FF7359EF484]
+	(No symbol) [0x00007FF7359EF61D]
+	(No symbol) [0x00007FF7359DEB79]
+	BaseThreadInitThunk [0x00007FFA45B77374+20]
+	RtlUserThreadStart [0x00007FFA46BBCC91+33]
+</status>
+</kw>
+<status status="FAIL" start="2024-10-28T16:08:34.716815" elapsed="5.157565">InvalidSelectorException: Message: invalid selector
+from javascript error: {"status":32,"value":"An invalid or illegal selector was specified"}
+  (Session info: chrome=130.0.6723.70); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF735A83AB5+28005]
+	(No symbol) [0x00007FF7359E83B0]
+	(No symbol) [0x00007FF73588580A]
+	(No symbol) [0x00007FF73588C2CC]
+	(No symbol) [0x00007FF73588E5E7]
+	(No symbol) [0x00007FF73588E6A0]
+	(No symbol) [0x00007FF7358D54EA]
+	(No symbol) [0x00007FF7358D5D2C]
+	(No symbol) [0x00007FF73591EAC7]
+	(No symbol) [0x00007FF7358FBA7F]
+	(No symbol) [0x00007FF73591B8B3]
+	(No symbol) [0x00007FF7358FB7E3]
+	(No symbol) [0x00007FF7358C75C8]
+	(No symbol) [0x00007FF7358C8731]
+	GetHandleVerifier [0x00007FF735D7643D+3118829]
+	GetHandleVerifier [0x00007FF735DC6C90+3448640]
+	GetHandleVerifier [0x00007FF735DBCF0D+3408317]
+	GetHandleVerifier [0x00007FF735B4A40B+841403]
+	(No symbol) [0x00007FF7359F340F]
+	(No symbol) [0x00007FF7359EF484]
+	(No symbol) [0x00007FF7359EF61D]
+	(No symbol) [0x00007FF7359DEB79]
+	BaseThreadInitThunk [0x00007FFA45B77374+20]
+	RtlUserThreadStart [0x00007FFA46BBCC91+33]
+</status>
 </kw>
 <kw name="Fechar navegador" owner="login" type="TEARDOWN">
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-10-28T15:23:30.880539" elapsed="2.273097"/>
+<status status="PASS" start="2024-10-28T16:08:39.875812" elapsed="2.225288"/>
 </kw>
-<status status="PASS" start="2024-10-28T15:23:30.879433" elapsed="2.274403"/>
+<status status="PASS" start="2024-10-28T16:08:39.875134" elapsed="2.226307"/>
 </kw>
-<tag>Alto</tag>
-<tag>Login</tag>
-<status status="PASS" start="2024-10-28T15:23:20.621663" elapsed="12.532512"/>
+<status status="FAIL" start="2024-10-28T16:08:28.914816" elapsed="13.187156">InvalidSelectorException: Message: invalid selector
+from javascript error: {"status":32,"value":"An invalid or illegal selector was specified"}
+  (Session info: chrome=130.0.6723.70); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF735A83AB5+28005]
+	(No symbol) [0x00007FF7359E83B0]
+	(No symbol) [0x00007FF73588580A]
+	(No symbol) [0x00007FF73588C2CC]
+	(No symbol) [0x00007FF73588E5E7]
+	(No symbol) [0x00007FF73588E6A0]
+	(No symbol) [0x00007FF7358D54EA]
+	(No symbol) [0x00007FF7358D5D2C]
+	(No symbol) [0x00007FF73591EAC7]
+	(No symbol) [0x00007FF7358FBA7F]
+	(No symbol) [0x00007FF73591B8B3]
+	(No symbol) [0x00007FF7358FB7E3]
+	(No symbol) [0x00007FF7358C75C8]
+	(No symbol) [0x00007FF7358C8731]
+	GetHandleVerifier [0x00007FF735D7643D+3118829]
+	GetHandleVerifier [0x00007FF735DC6C90+3448640]
+	GetHandleVerifier [0x00007FF735DBCF0D+3408317]
+	GetHandleVerifier [0x00007FF735B4A40B+841403]
+	(No symbol) [0x00007FF7359F340F]
+	(No symbol) [0x00007FF7359EF484]
+	(No symbol) [0x00007FF7359EF61D]
+	(No symbol) [0x00007FF7359DEB79]
+	BaseThreadInitThunk [0x00007FFA45B77374+20]
+	RtlUserThreadStart [0x00007FFA46BBCC91+33]
+</status>
 </test>
-<status status="PASS" start="2024-10-28T15:23:20.456894" elapsed="12.699886"/>
+<status status="FAIL" start="2024-10-28T16:08:28.734108" elapsed="13.375210"/>
 </suite>
-<status status="PASS" start="2024-10-28T15:23:20.440270" elapsed="12.719728"/>
+<status status="FAIL" start="2024-10-28T16:08:28.716040" elapsed="13.394925"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">Alto</stat>
-<stat pass="1" fail="0" skip="0">Login</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Coding DOJO">Coding DOJO</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1" name="Login">Coding DOJO.Login</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="Coding DOJO">Coding DOJO</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Login">Coding DOJO.Login</stat>
 </suite>
 </statistics>
 <errors>

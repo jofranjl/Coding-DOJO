@@ -9,9 +9,13 @@ ${url}     https://opensource-demo.orangehrmlive.com/
 
 *** Keywords ***
 
+
+Tempo de espera
+    Set Selenium Implicit Wait        10
+
 Abrir navegador
     Open Browser    ${url}        chrome
-    Sleep            5
+    Tempo de espera
 
 Fechar navegador
     Close Browser
@@ -29,7 +33,19 @@ Informar senha
     [Arguments]    ${senha}
     Input Text    name=password    ${senha}
 
-
+Login invalido
+   Wait Until Page Contains      Invalid credentials  timeout=5
 
 Clicar no botão logar
-    Click Button    css=div.orangehrm-login-layout div.orangehrm-login-layout-blob div.orangehrm-login-container div.orangehrm-login-slot-wrapper div.orangehrm-login-slot div.orangehrm-login-form form.oxd-form div.oxd-form-actions.orangehrm-login-action:nth-child(4) > button.oxd-button.oxd-button--medium.oxd-button--main.orangehrm-login-button
+   ## Click Button    type=submit
+    Click Element    css=button[type="submit"]
+
+
+Aguardar até a busca estar visivel
+    Wait Until Element Is Visible  css=input[placeholder="Search"]  timeout=10  # Aguarda o campo estar visível
+    Input Text  css=input[placeholder="Search"]  Seu texto aqui  # Digita no campo
+
+CLicar no avatar
+    Click Element     css=.oxd-userdropdown-tab
+    Sleep        5
+    Click Element    css=button.oxd-button--secondary:contains('Save')
